@@ -1,6 +1,7 @@
 import 'package:booking_app/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,7 +13,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3)).then((value) {
+    Future.delayed(const Duration(seconds: 5)).then((value) {
       Navigator.of(context).pushReplacement(
           CupertinoPageRoute(builder: (ctx) => const HomePage()));
     });
@@ -30,15 +31,16 @@ class _SplashScreenState extends State<SplashScreen> {
           children: const [
             Image(
               image: AssetImage("assets/images/preview.png"),
-              width: 200,
+              width: 500,
             ),
             SizedBox(
               height: 50,
             ),
-            // SpinKitRotatingCircle(
-            //   color: Colors.white,
-            //   size: 50.0,
-            // )
+            SpinKitSpinningLines(
+              color: Colors.blueAccent,
+              size: 80.0,
+              
+            )
           ],
         ),
       ),
